@@ -7,25 +7,27 @@ We are University student that are trying our best to fullfill our Tasks.
 ### 2.1. Functionality  
   
 + Make a simulation that shows various hunting stratgies for group hunting
-    + each predator should be making decisions based upon their knowledge
-    + predators hunt small pray alone
-    + predators notify group when help is needed for larger prey
-    + there are only cooperative and solo hunters
-    + when cooperative hunting predators must stay within a group radius, while trying to corner the prey
-    + prey is considered killed once one of the predators of a group has reached it
-    + if the group of predators it not large enough the prey will retaliate
-        + prey attacks the closest predator
-        + prey kills closest predator if their atk is higher than the predator def
-    + attacked predators try to escape the preys attack and rejoin the group by being in the group radius
-    + Predators should use diffrent movement tactics to corner prey without being aware of the predator
-    + Prey neednoticing them to go as far as possible without the predators without a specific strategy
-    + The predator needs to see prey (there must be a way to determine if they see them or not)
-    + The predator needs to inform others (in group circle there is no howling required, else the wolf needs to share their possition and prey via howling)
-    + each cycle predators loose hp due to starvation
-    + predators gain hp by killing prey
+    + each predator should be making decisions based upon their knowledge [x]
+    + predators hunt small pray alone [x]
+    + predators notify group when help is needed for larger prey [x]
+    + there are only cooperative and solo hunters [x]
+    + when cooperative hunting predators must stay within a group radius, while trying to corner the prey [X]
+    + prey is considered killed once one of the predators of a group has reached it [x]
+    + if the group of predators it not large enough the prey will retaliate [x]
+        + prey attacks the closest predator [x]
+        + prey kills closest predator if their atk is higher than the predator def [x]
+    + attacked predators try to escape the preys attack and rejoin the group by being in the group radius [x]
+    + Predators should use diffrent movement tactics to corner prey without being aware of the predator < ? >
+    + Prey need noticing them to go as far as possible without the predators without a specific strategy [x]
+    + The predator needs to see prey (there must be a way to determine if they see them or not) [x]
+    + The predator needs to inform others (in group circle there is no howling required, else the wolf needs to share their possition and prey via howling) [x]
+    + each cycle predators loose hp due to starvation [x]
+    + predators gain hp by killing prey [x]
 + programmed with Java (not further specified)
-    + unclear what libary is allowed
-    + unclear if we need to use the standard GUI or if we can output to HTML/CSS or use GUI larbary
+    + unclear what libary is allowed 
+        `seems like all are ok`
+    + unclear if we need to use the standard GUI or if we can output to HTML/CSS or use GUI libary
+        `seems like all are ok` 
 + there has to be a Visual representation of the hunters and hunted  
     + this can be a simple 2D grid based envoirement with colored singulare or groups of tiles
     + the hunter and predator should be diffrentiable
