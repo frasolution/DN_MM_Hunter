@@ -5,7 +5,7 @@
 * Enter n via UI (use slider)
 * use arraylist or array
   
-## create Virtual class Actor
+## create class Actor
 * visabiltyCone()
 * movement()
 * isFriendly()
