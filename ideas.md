@@ -85,3 +85,4 @@
     * add: death stats like avg death and death rate (how many preddator die per cycle)
 * avg food gained per iteration
     * add?: avg food gained by cycle
+* simulation speed (slider)

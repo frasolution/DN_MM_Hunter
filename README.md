@@ -63,9 +63,9 @@ We are University student that are trying our best to fullfill our Tasks.
 + Simulation object colors
     + allow color palets for predators and prey
     + Q: What are dublicates in this context, should every predators 
-+ Simulation Speed
-    + fast reperesents results faster
-    + slow should be easy to follow
++ Simulation Speed [x]
+    + fast reperesents results faster [x]
+    + slow should be easy to follow [x]
 
 ### 2.3. Application outputs  
 *output shall include but is not limited to*
