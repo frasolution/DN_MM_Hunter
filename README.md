@@ -27,22 +27,22 @@ We are University student that are trying our best to fullfill our Tasks.
     + unclear what libary is allowed 
         `seems like all are ok`
     + unclear if we need to use the standard GUI or if we can output to HTML/CSS or use GUI libary
-        `seems like all are ok` 
-+ there has to be a Visual representation of the hunters and hunted  
-    + this can be a simple 2D grid based envoirement with colored singulare or groups of tiles
-    + the hunter and predator should be diffrentiable
-    + movement should be shown
-    + a trail does is not given for the hunter (maybe debug version though)
-+ there has to be a GUI for the user to enter parameters that influence the GUI
+        `seems like Java FX is required` 
++ there has to be a Visual representation of the hunters and hunted  [x]
+    + this can be a simple 2D grid based envoirement with colored singulare or groups of tiles [x]
+    + the hunter and predator should be diffrentiable [x]
+    + movement should be shown [x]
+    + a trail does is not given for the hunter (maybe debug version though) [x]
++ there has to be a GUI for the user to enter parameters that influence the GUI [x]
   
 ### 2.2. Input parameters  
 *The input parameters may include but are not limted to*    
-+ the grid size
-    + X and Y size shall be indipendet 
-+ predator
-    + Initial Predator count
-    + run speed (how many tiles per cycle)
-    + Q: should there be growth of these or just lesser through death
++ the grid size [x]
+    + X and Y size shall be indipendet [x]
++ predator [x]
+    + Initial Predator count [x]
+    + run speed (how many tiles per cycle) [x]
+    + Q: should there be growth of these or just death
 + Prey
     + position on the grip (x | y coordiante)
     + size of prey in grid ( x | y size )
@@ -50,16 +50,16 @@ We are University student that are trying our best to fullfill our Tasks.
         + gives less nutrition
     + run speed (how many tiles per cycle)    
     + Q: number of prey? is it one
-+ Auto generate prey (Toggle)
-    + generate prey every x seconds
-    + place at random possitions
-+ Predator stavation resiliaence(Starvation rate)
-    + how many cycle can a predator survive without starving to death
++ Auto generate prey (Toggle) [x]
+    + generate prey every x seconds [x]
+    + place at random possitions [x]
++ Predator stavation resiliaence(Starvation rate) [x]
+    + how many cycle can a predator survive without starving to death [x]
 + Predator defance chance
     + larger prey would attack a lone predator
     + the predator will be killed if its score is bigger than the predators defance
-+ predator group radius
-    + if a number of predators are within radius of eachother they form a group and can hunt larger prey
++ predator group radius [x]
+    + if a number of predators are within radius of eachother they form a group and can hunt larger prey [x]
 + Simulation object colors
     + allow color palets for predators and prey
     + Q: What are dublicates in this context, should every predators 
@@ -69,11 +69,11 @@ We are University student that are trying our best to fullfill our Tasks.
 
 ### 2.3. Application outputs  
 *output shall include but is not limited to*
-+ average food gain per iteration
-    + averge nutrition gained on average per cycle
-+ predator count
-    + OWN: show avg deaths
-    + OWN: show avg death rate
++ average food gain per iteration [x]
+    + averge nutrition gained on average per cycle [x]
++ predator count [x]
+    + OWN: show avg deaths [x]
+    + OWN: show avg death rate [x]
 
 ## 3. possible pitfalls
 ### 3.1. Effective scouting  
