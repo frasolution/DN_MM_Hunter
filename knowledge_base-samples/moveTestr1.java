@@ -26,6 +26,7 @@ public class moveTestr1{
         arr[pointX[0]][pointY[0]] = 0;
         arr[pointX[0]][pointY[0] + 1] = 1;
         printDX(arr);
+        sc.close();
     }
     public static void printDX(int[][] arr){
         for( int i = 0 ; i < arr[0].length ; i++ ) {

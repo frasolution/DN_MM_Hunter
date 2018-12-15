@@ -7,7 +7,6 @@ public class moveTestr{
         int gridY = sc.nextInt();
         int[][] arr = new int [gridX][gridY];
         Random rand = new Random();
-        for(int i = sc.nextInt() ; 0 < i ; i-- ){
         int pointX = rand.nextInt(gridX);
         int pointY = rand.nextInt(gridY);
         arr[pointX][pointY] = 1;
@@ -19,6 +18,8 @@ public class moveTestr{
         arr[pointX][pointY + 1] = 1;
         
         printDX(arr, gridX, gridY);
+
+        sc.close();
     }
     public static void printDX(int[][] arr, int gridX, int gridY){
         for( int i = 0 ; i < gridX ; i++ ) {

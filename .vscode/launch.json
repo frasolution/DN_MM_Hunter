@@ -1,0 +1,16 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - moveTestr2",
+            "request": "launch",
+            "mainClass": "moveTestr2"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - moveTestr",
+            "request": "launch",
+            "mainClass": "moveTestr"
+        }
+    ]
+}
