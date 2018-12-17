@@ -1,9 +1,4 @@
 import java.util.*;
-
-import com.sun.org.apache.xpath.internal.operations.Bool;
-
-import sun.security.util.Length;
-
 import java.lang.*;
 
 public class moveTestr2{
@@ -18,10 +13,11 @@ public class moveTestr2{
         for(int i = 0 ; i < arrs ; i++ ){
             arr[ rand.nextInt( arr[0].length -1 ) ][ rand.nextInt( arr[1].length - 1 ) ] = true ; //[y][x]
         }
-        printDX(arr);
-        moveLeft(arr);
-        printDX(arr);
-
+        for(int iterationist = 0 ; iterationist < arr[0].length ; iterationist++ ) {
+            printDX(arr);
+            moveLeft(arr);
+        }
+        sc.close();
     }
 
     public static void moveLeft(boolean[][] arr) throws InterruptedException { //[y][x]
