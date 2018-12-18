@@ -41,14 +41,14 @@ public class smellTest {
             int x = hunterX[i];
             int y = hunterY[i];
             if( x == 0 ) {
-                if( y == 0 )
-                else if ( y == pl1)
-                else 
+                if( y == 0 ) canSmellDL(plane, x, y);
+                else if ( y == pl1) canSmellDR(plane, x, y);
+                else canSmellD(plane, x, y);
             }
             else if ( x == plane[0].length ) {
-                if( y == 0 )
-                else if ( y == pl1 )
-                else 
+                if( y == 0 ) canSmellUL(plane, x, y);
+                else if ( y == pl1 ) canSmellUR(plane, x, y);
+                else canSmellU(plane, x, y);
             }
             else {
                 if( y == 0 ) canSmellU(plane, x, y);
@@ -69,7 +69,11 @@ public class smellTest {
      */
     //----------------------------------------------------
     public static void canSmellM(int[][] plane, int x, int y){
-        
+        if ( plane[x + 1][y] == 1 ) System.out.println(" To the right ");
+            else if ( plane[x - 1][y] == 1 ) System.out.println(" To the left ");
+            else if ( plane[x][y + 1] == 1 ) System.out.println(" Below ");
+            else if ( plane[x][y - 1] == 1 ) System.out.println(" Above ");
+            else return;
     }
     //----------------------------------------------------
     public static void canSmellU(int[][] plane, int x, int y){
