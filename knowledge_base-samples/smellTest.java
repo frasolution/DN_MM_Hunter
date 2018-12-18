@@ -31,14 +31,77 @@ public class smellTest {
         printDX(plane);
         fillList(plane, hunterX, hunterY);
         printU(shortSide, hunterX, hunterY);
+        canSmell(plane, hunterX, hunterY);
     }
     //----------------------------------------------------
-    public static void canSmell( int[][] plane ) {
+    public static void canSmell( int[][] plane , int[] hunterX, int[] hunterY ) throws ArrayIndexOutOfBoundsException {
+        //int pl0 = plane[0].length; // required once so no compute effext can be seen
+        int pl1 = plane[1].length;
+        for ( int i = 0 ; i < hunterX.length ; i++ ) {
+            int x = hunterX[i];
+            int y = hunterY[i];
+            if( x == 0 ) {
+                if( y == 0 )
+                else if ( y == pl1)
+                else 
+            }
+            else if ( x == plane[0].length ) {
+                if( y == 0 )
+                else if ( y == pl1 )
+                else 
+            }
+            else {
+                if( y == 0 ) canSmellU(plane, x, y);
+                else if ( y == pl1) canSmellD(plane, x, y);
+                else canSmellM(plane, x, y);
+            }
+        }
+        System.out.print("another Hunter can be smelled \n Do you want to init Howl() ?\n");
+    }
+
+    /**
+     * if ( plane[x + 1][y] == 1 ) break;
+            else if ( plane[x - 1][y] == 1 ) break;
+            else if ( plane[x][y + 1] == 1 ) break;
+            else if ( plane[x][y - 1] == 1 ) break;
+            else return;
+     * It's dangerous to go alone take this
+     */
+    //----------------------------------------------------
+    public static void canSmellM(int[][] plane, int x, int y){
         
     }
     //----------------------------------------------------
-    public static void canSmell2(int x, int y){
+    public static void canSmellU(int[][] plane, int x, int y){
     
+    }
+    //----------------------------------------------------
+    public static void canSmellUL(int[][] plane, int x, int y){
+    
+    }
+    //----------------------------------------------------
+    public static void canSmellUR(int[][] plane, int x, int y){
+
+    }
+    //----------------------------------------------------
+    public static void canSmellD(int[][] plane, int x, int y){
+
+    }
+    //----------------------------------------------------
+    public static void canSmellDR(int[][] plane, int x, int y){
+
+    }
+    //----------------------------------------------------
+    public static void canSmellDL(int[][] plane, int x, int y){
+
+    }
+    //----------------------------------------------------
+    public static void canSmellR(int[][] plane, int x, int y){
+
+    }
+    //----------------------------------------------------
+    public static void canSmellL(int[][] plane, int x, int y){
+
     }
     //----------------------------------------------------
     public static void printU(int shortSide , int[] hunterX, int[] hunterY) {

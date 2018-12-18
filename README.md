@@ -26,8 +26,10 @@ We are University student that are trying our best to fullfill our Tasks.
 + programmed with Java (not further specified)
     + unclear what libary is allowed 
         `seems like all are ok`
+        + all are ok
     + unclear if we need to use the standard GUI or if we can output to HTML/CSS or use GUI libary
-        `seems like Java FX is required` 
+        `seems like Java FX is required`
+        + all platform independent libaries are ok
 + there has to be a Visual representation of the hunters and hunted  [x]
     + this can be a simple 2D grid based envoirement with colored singulare or groups of tiles [x]
     + the hunter and predator should be diffrentiable [x]
