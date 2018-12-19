@@ -30,7 +30,7 @@ public class moveTestr{
             System.out.println("");
         }
     }
-    public static void clr(){
+    public static void clr() throws InterruptedException {
         Thread.sleep(1000);
         System.out.print("\033[H\033[2J");  
         System.out.flush(); 
