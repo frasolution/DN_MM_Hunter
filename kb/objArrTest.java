@@ -1,3 +1,5 @@
+package kb;
+
 import java.util.Scanner;
 
 public class objArrTest{

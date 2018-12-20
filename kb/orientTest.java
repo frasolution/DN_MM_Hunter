@@ -1,3 +1,5 @@
+package kb;
+
 import java.util.*;
 import java.lang.*;
 /**
@@ -52,6 +54,7 @@ public class orienterTest {
             hunters[i].setY( rng.nextInt( plane[1].length - 1 ) );
             hunters[i].setRot( rng.nextInt( 3 ) );
         }
+        
         /**
          * Now we need to check if the ther is another object near us and if so we rotate and move away
          * To ease up the comptational requests and for later ease of implementation of the gui we might use an array for this that will get upadated continously
