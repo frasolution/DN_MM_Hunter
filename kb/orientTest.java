@@ -14,7 +14,7 @@ import java.lang.*;
  * left = 2
  * 
  */
-public class orienterTest {
+public class orientTest {
     //-----------------------------
     //use object capsulation for the productions code
     private int x;
@@ -48,7 +48,7 @@ public class orienterTest {
         int shortSide;
         if ( plane[0].length > plane[1].length ) shortSide = plane[1].length;
         else shortSide = plane[0].length; 
-        orienterTest[] hunters = new orienterTest[shortSide/2];
+        orientTest[] hunters = new orientTest[shortSide/2];
         for( int i = 0 ; shortSide/2 > i ; i++ ) {
             hunters[i].setX( rng.nextInt( plane[0].length - 1 ) );
             hunters[i].setY( rng.nextInt( plane[1].length - 1 ) );

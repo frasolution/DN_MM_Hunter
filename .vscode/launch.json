@@ -2,6 +2,12 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - objArrTest",
+            "request": "launch",
+            "mainClass": "kb.objArrTest"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - moveTestr2",
             "request": "launch",
             "mainClass": "moveTestr2"
