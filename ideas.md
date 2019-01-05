@@ -15,6 +15,32 @@
 * onOverlap()
 * movement speed defined
 
+# sorry I went to far with this thing following but it was just so much fun as me for a Tl;Dr later if you want Greetings Max
+
+## Unforeseen Consequences
+Dear friend this is a note from your good pal Eli Vance from you know, the black mesa science team.  
+We have encountered a much better system idea in a very familiar place. Your YouTube subscription inbox.  
+I know me and Dr. Kleiner are very sorry that we looked at your PERSONAL COMPUTER  
+but regardless we might want to impose some much needed fresh ideas for your RESEARCH.  
+So you know this fictional game by my favorite author Mark L.L. it was called Stack Pointer.  
+You know where they tried to debug their main system with the help of that shady guy in the suit and ended up i a lot of chaos and the whole facity went wild.
+  
+Well we have watch some analysis videos that were in your aforementioned subscriptions and found this awesome system in the code Engien that allowed more complex solutions to your very problem.  
+Well the isFriendly() function for your object seems to be a nice start but you just go deeper than what you imagined with this.  
+Just save the virtual class [Actor] and use relations in numbers to check if they are firendly.
+Kleiner also came up with a solution allready just use some prime number magic.  
+Every hunter that has a is devideable by the same prime is friendly and if they are diffrent they are enemies.  
+The one with the smaller number is prey and the one with the bigger is the hunter.
+I'm sure you can get help with that number magic if you really need to but try it yourself first.
+The best part is since you use modern day computers with our prototype intel 686 we can use really big numbers with near no impact on simulation speed.
+The best part is you could evem go as far as including number of fractions or set up tribes, maybe even allow them hunters to kill their own kind and so on.
+Maybe even allow diffrent races to hunte prey with eachother to than attack eachother with no more prey around. I mean the possibilites are truely endless here.
+Just think about the what preasure corp did here with Stack Pointer 2. Man I really would like to see what they can do with the Code 2 engien.
+  
+ANYWAY I hope this helps and DON'T be LATE to our experiment tomorrow or Breen might fire us all.
+Yours truely,
+Eli Vance  
+
 ## HunterActor
 `DERIVED FROM ACTOR`
 * int hp        (Do we need HP on actor Actor)
