@@ -14,7 +14,7 @@ import java.lang.*;
  * left = 2
  * 
  */
-public class orientTest {
+public class ori {
     //-----------------------------
     //use object capsulation for the productions code
     private int x;
@@ -47,7 +47,7 @@ public class orientTest {
         int shortSide;
         if ( plane[0].length > plane[1].length ) shortSide = plane[1].length;
         else shortSide = plane[0].length; 
-        orientTest[] hunters = new orientTest[shortSide/2];
+        ori[] hunters = new ori[shortSide/2];
         
         int shortSideDiv2 = shortSide / 2;
         int[] gridNodeListX = new int[shortSideDiv2];
@@ -92,7 +92,7 @@ public class orientTest {
         locArr[2] = rng.nextInt(3);
         return locArr;
     }
-    public static void printPile(orientTest[] hunters, int[][] plane  ){
+    public static void printPile(ori[] hunters, int[][] plane  ){
         for(int i = 0 ; hunters.length > i ; i++){
             plane[ hunters[i].getX() ][ hunters[i].getY() ] = hunters[i].getRot();
         }
