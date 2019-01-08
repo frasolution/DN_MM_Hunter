@@ -43,16 +43,24 @@ public class orientTest {
     //-----------------------------
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        Random rng = new Random();
         int[][] plane = new int [sc.nextInt()][sc.nextInt()];
+        
         int shortSide;
         if ( plane[0].length > plane[1].length ) shortSide = plane[1].length;
         else shortSide = plane[0].length; 
         orientTest[] hunters = new orientTest[shortSide/2];
-        for( int i = 0 ; shortSide/2 > i ; i++ ) {
-            hunters[i].setX( rng.nextInt( plane[0].length - 1 ) );
-            hunters[i].setY( rng.nextInt( plane[1].length - 1 ) );
-            hunters[i].setRot( rng.nextInt( 3 ) );
+        
+        int shortSideDiv2 = shortSide / 2;
+        int[] gridNodeListX = new int[shortSideDiv2];
+        int[] gridNodeListY = new int[shortSideDiv2];
+        for( int i = 0 ; shortSideDiv2 > i ; i++ ) {
+            int[] isLegitGridNodeArrPass = new int[3];
+            isLegitGridNodeArrPass = genPairGridNode( plane , gridNodeListX , gridNodeListY); // no need to check after gen if checked while genration for points with the same coordinates
+            
+            hunters[i].setX( isLegitGridNodeArrPass[0] );
+            hunters[i].setY( isLegitGridNodeArrPass[1] );
+            hunters[i].setRot( isLegitGridNodeArrPass[2] );
+
         }
         
         /**
@@ -60,7 +68,61 @@ public class orientTest {
          * To ease up the comptational requests and for later ease of implementation of the gui we might use an array for this that will get upadated continously
          *  - this might be error prone
         */
+
         sc.close();
     }
+    //-----------------------------
+    public static int[] genPairGridNode(int[][] plane, int[] gridNodeListX, int[] gridNodeListY) {
+        int[] locArr = new int[3];
+        locArr = genNode(plane);
+        boolean noPairFound = true;
+        while(noPairFound){
+            for(int i = 0 ; gridNodeListX.length > i ; i++ ){
+                if (locArr[0] == gridNodeListX[i] || locArr[1] == gridNodeListY[i] ) locArr = genNode(plane);
+                else noPairFound = false;
+            }
+        }
+        return locArr;
+    }
+    //-----------------------------
+    public static int[] genNode( int[][] plane ){
+        Random rng = new Random();
+        int[] locArr = new int[3];
+        locArr[0] = rng.nextInt( plane[0].length - 1 );
+        locArr[1] = rng.nextInt( plane[1].length - 1 );
+        locArr[2] = rng.nextInt(3);
+        return locArr;
+    }
+    //-----------------------------
+    /*
+    public static int[] genPairGridNode( int[][] plane , int[] gridNodeListX , int[] gridNodeListY , orientTest[] hunters ){
+        Random rng = new Random();
+        int locX = rng.nextInt( plane[0].length - 1 );
+        int locY = rng.nextInt( plane[1].length - 1 );
+        int[] ArrGenPairGridNode = new int[2];
+        ArrGenPairGridNode = isLegitGridNode(locX, locY, gridNodeListX , gridNodeListY , hunters);
+        return ArrGenPairGridNode;
+    }
+    public static int[] isLegitGridNode( int[][] plane , int[] gridNodeListX , int[] gridNodeListY , orientTest[] hunters){
+        
+        
+        
+        for(int i = 0 ; gridNodeListX.length > i ; i++ ){
+            boolean noPairFound = true;
+            int[] locArr = new int[2];
+            locArr = genPoint(plane);
+            while(noPairFound){
+                for(int j = 0 ; gridNodeListX.length > j ; j++ ){
+                    if (! locArr[0] == gridNodeListX[i] || locArr[1] == gridNodeListY[i] ){
+                        
+                    } else {
+                        noPairFound = false;
+
+                    }
+                }
+            }
+        }
+        return locArr;
+    } */
     //-----------------------------
 }
