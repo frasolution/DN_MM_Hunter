@@ -1,7 +1,8 @@
-package kb;
+//package kb;
 
 import java.util.*;
 import java.lang.*;
+
 /**
  * rotations explained :
  * currently we only want up right down left as orientations
@@ -14,7 +15,8 @@ import java.lang.*;
  * left = 2
  * 
  */
-public class orientTest {
+
+public class OrientTest {
     //-----------------------------
     //use object capsulation for the productions code
     private int x;
@@ -47,19 +49,24 @@ public class orientTest {
         int shortSide;
         if ( plane[0].length > plane[1].length ) shortSide = plane[1].length;
         else shortSide = plane[0].length; 
-        orientTest[] hunters = new orientTest[shortSide/2];
+        OrientTest[] hunters = new OrientTest[shortSide/2];
         
         int shortSideDiv2 = shortSide / 2;
         int[] gridNodeListX = new int[shortSideDiv2];
         int[] gridNodeListY = new int[shortSideDiv2];
+        int nullExepExpcept = 1;
+        for( int i = 0 ; shortSideDiv2 > i ; i++ ){
+            gridNodeListX[i] = 0;
+            gridNodeListY[i] = 0;
+        }
+        int[] isLegitGridNodeArrPass = new int[3];
         for( int i = 0 ; shortSideDiv2 > i ; i++ ) {
-            int[] isLegitGridNodeArrPass = new int[3];
-            isLegitGridNodeArrPass = genPairGridNode( plane , gridNodeListX , gridNodeListY); // no need to check after gen if checked while genration for points with the same coordinates
-            
+            isLegitGridNodeArrPass = genPairGridNode ( plane , gridNodeListX , gridNodeListY, nullExepExpcept ); // no need to check after gen if checked while genration for points with the same coordinates
+                      
             hunters[i].setX( isLegitGridNodeArrPass[0] );
             hunters[i].setY( isLegitGridNodeArrPass[1] );
             hunters[i].setRot( isLegitGridNodeArrPass[2] );
-
+            
         }
         printPile(hunters, plane);
         /**
@@ -71,12 +78,12 @@ public class orientTest {
         sc.close();
     }
     //-----------------------------
-    public static int[] genPairGridNode(int[][] plane, int[] gridNodeListX, int[] gridNodeListY) {
+    public static int[] genPairGridNode(int[][] plane, int[] gridNodeListX, int[] gridNodeListY, int nullExepExpcept) {
         int[] locArr = new int[3];
-        locArr = genNode(plane);
+        locArr = genNode( plane );
         boolean noPairFound = true;
         while(noPairFound){
-            for(int i = 0 ; gridNodeListX.length > i ; i++ ){
+            for(int i = 0 ; nullExepExpcept > i ; i++ ){
                 if (locArr[0] == gridNodeListX[i] || locArr[1] == gridNodeListY[i] ) locArr = genNode(plane);
                 else noPairFound = false;
             }
@@ -92,7 +99,8 @@ public class orientTest {
         locArr[2] = rng.nextInt(3);
         return locArr;
     }
-    public static void printPile(orientTest[] hunters, int[][] plane  ){
+    //-----------------------------
+    public static void printPile(OrientTest[] hunters, int[][] plane  ){
         for(int i = 0 ; hunters.length > i ; i++){
             plane[ hunters[i].getX() ][ hunters[i].getY() ] = hunters[i].getRot();
         }
