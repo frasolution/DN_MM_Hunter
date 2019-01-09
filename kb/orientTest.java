@@ -1,4 +1,4 @@
-//package kb;
+package kb;
 
 import java.util.*;
 import java.lang.*;
@@ -94,6 +94,7 @@ public class OrientTest {
         for(int i = 0 ; hunters.length > i ; i++){
             plane[ hunters[i].getX() ][ hunters[i].getY() ] = hunters[i].getRot();
         }
+        
         for ( int ichi = 0 ; plane[0].length > ichi ; ichi++ ) { // ichi, ni, san GOOO!!!
             for ( int ni = 0 ; plane[1].length > ni ; ni++ ) {
                 switch(plane[ichi][ni]){
