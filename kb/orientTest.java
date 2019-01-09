@@ -3,22 +3,8 @@
 import java.util.*;
 import java.lang.*;
 
-/**
- * rotations explained :
- * currently we only want up right down left as orientations
- * but hey we maybe add up-right down-right down-leeft up-left
- * but probaly not since it is not going to add a lot of value and a lot more work, its not hard work just really boring calulations
- * 
- * up = 3
- * right = 0
- * donw = 1
- * left = 2
- * 
- */
-
 public class OrientTest {
     //-----------------------------
-    //use object capsulation for the productions code
     private int x;
     private int y;
     private int rot;
@@ -49,21 +35,24 @@ public class OrientTest {
         int shortSide;
         if ( plane[0].length > plane[1].length ) shortSide = plane[1].length;
         else shortSide = plane[0].length; 
-        OrientTest[] hunters = new OrientTest[shortSide/2];
-        
+
         int shortSideDiv2 = shortSide / 2;
+
+        OrientTest[] hunters = new OrientTest[shortSideDiv2];
         int[] gridNodeListX = new int[shortSideDiv2];
         int[] gridNodeListY = new int[shortSideDiv2];
+        int[] isLegitGridNodeArrPass = new int[3];
         int nullExepExpcept = 1;
+
         for( int i = 0 ; shortSideDiv2 > i ; i++ ){
             gridNodeListX[i] = 0;
             gridNodeListY[i] = 0;
         }
-        int[] isLegitGridNodeArrPass = new int[3];
+
         for( int i = 0 ; shortSideDiv2 > i ; i++ ) {
             isLegitGridNodeArrPass = genPairGridNode ( plane , gridNodeListX , gridNodeListY, nullExepExpcept ); // no need to check after gen if checked while genration for points with the same coordinates
-                      
-            hunters[i].setX( isLegitGridNodeArrPass[0] );
+            hunters[i] = new OrientTest();
+            hunters[i].setX( 1 ); //isLegitGridNodeArrPass[0]
             hunters[i].setY( isLegitGridNodeArrPass[1] );
             hunters[i].setRot( isLegitGridNodeArrPass[2] );
             
@@ -88,6 +77,7 @@ public class OrientTest {
                 else noPairFound = false;
             }
         }
+        nullExepExpcept++;
         return locArr;
     }
     //-----------------------------
@@ -120,7 +110,7 @@ public class OrientTest {
                         System.out.print(">");
                         break;
                     default:
-                        break;
+                        System.out.print("*");
                 }
             }
             System.out.println("");
