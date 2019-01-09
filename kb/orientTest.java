@@ -1,5 +1,3 @@
-package kb;
-
 import java.util.*;
 import java.lang.*;
 
@@ -37,6 +35,7 @@ public class OrientTest {
         else shortSide = plane[0].length; 
 
         int shortSideDiv2 = shortSide / 2;
+        System.out.println("ShoDiv2 :" + shortSideDiv2);
 
         OrientTest[] hunters = new OrientTest[shortSideDiv2];
         int[] gridNodeListX = new int[shortSideDiv2];
@@ -52,10 +51,14 @@ public class OrientTest {
         for( int i = 0 ; shortSideDiv2 > i ; i++ ) {
             isLegitGridNodeArrPass = genPairGridNode ( plane , gridNodeListX , gridNodeListY, nullExepExpcept ); // no need to check after gen if checked while genration for points with the same coordinates
             hunters[i] = new OrientTest();
-            hunters[i].setX( 1 ); //isLegitGridNodeArrPass[0]
+            hunters[i].setX( isLegitGridNodeArrPass[0] ); 
             hunters[i].setY( isLegitGridNodeArrPass[1] );
             hunters[i].setRot( isLegitGridNodeArrPass[2] );
-            
+            System.out.println( isLegitGridNodeArrPass[0] + " " + isLegitGridNodeArrPass[1] + " " + isLegitGridNodeArrPass[2]);
+
+            gridNodeListX[i] = isLegitGridNodeArrPass[0];
+            gridNodeListY[i] = isLegitGridNodeArrPass[1];
+
         }
         printPile(hunters, plane);
         /**
@@ -86,11 +89,16 @@ public class OrientTest {
         int[] locArr = new int[3];
         locArr[0] = rng.nextInt( plane[0].length - 1 );
         locArr[1] = rng.nextInt( plane[1].length - 1 );
-        locArr[2] = rng.nextInt(3);
+        locArr[2] = rng.nextInt(4);
         return locArr;
     }
     //-----------------------------
     public static void printPile(OrientTest[] hunters, int[][] plane  ){
+        for ( int ichi = 0 ; plane[0].length > ichi ; ichi++ ) { // ichi, ni, san GOOO!!!
+            for ( int ni = 0 ; plane[1].length > ni ; ni++ ) {
+                plane[ichi][ni] = 4;
+            }
+        }
         for(int i = 0 ; hunters.length > i ; i++){
             plane[ hunters[i].getX() ][ hunters[i].getY() ] = hunters[i].getRot();
         }
@@ -98,6 +106,9 @@ public class OrientTest {
         for ( int ichi = 0 ; plane[0].length > ichi ; ichi++ ) { // ichi, ni, san GOOO!!!
             for ( int ni = 0 ; plane[1].length > ni ; ni++ ) {
                 switch(plane[ichi][ni]){
+                    case 0:
+                        System.out.print(">");
+                        break;
                     case 1:
                         System.out.print("v");
                         break;
@@ -107,9 +118,6 @@ public class OrientTest {
                     case 3:
                         System.out.print("^");
                         break;                        
-                    case 4:
-                        System.out.print(">");
-                        break;
                     default:
                         System.out.print("*");
                 }
