@@ -126,4 +126,105 @@ public class OrientTest {
         }
     }
     //-----------------------------
+    //-----------------------------
+    public static OrientTest[] rotTest(OrientTest[] hunters, int[][] plane){
+        int[] hunterX = new int[hunters.length];
+        int[] hunterY = new int[hunters.length];
+        for ( int i = 0 ; hunters.length > i ; i++ ) { 
+            hunterX[i] = hunters[i].getX();
+            hunterY[i] = hunters[i].getY();
+        }
+
+    }
+    //-----------------------------
+    public static OrientTest[] proxTest(int[] hunterX, int[] hunterY, int[][] plane){
+        //int pl0 = plane[0].length; // required once so no compute effext can be seen
+        int pl1 = plane[1].length;
+        for ( int i = 0 ; i < hunterX.length ; i++ ) {
+            int x = hunterY[i];
+            int y = hunterX[i];
+            if( x == 0 ) {
+                if( y == 0 ) needToTurnTestDL(plane, x, y);
+                else if ( y == pl1) needToTurnTestDR(plane, x, y);
+                else needToTurnTestD(plane, x, y);
+            }
+            else if ( x == plane[0].length ) {
+                if( y == 0 ) needToTurnTestUL(plane, x, y);
+                else if ( y == pl1 ) needToTurnTestUR(plane, x, y);
+                else needToTurnTestU(plane, x, y);
+            }
+            else {
+                if( y == 0 ) needToTurnTestU(plane, x, y);
+                else if ( y == pl1) needToTurnTestD(plane, x, y);
+                else needToTurnTestM(plane, x, y);
+            }
+        }
+   }
+   //-----------------------------
+   public static void needToTurnTestM(int[][] plane, int x, int y){
+       if ( plane[x + 1][y] == 1 ) right();
+           else if ( plane[x - 1][y] == 1 ) left();
+           else if ( plane[x][y + 1] == 1 ) below();
+           else if ( plane[x][y - 1] == 1 ) above();
+           else return;
+   }
+   public static void needToTurnTestU(int[][] plane, int x, int y){
+       if ( plane[x + 1][y] == 1 ) right();
+           else if ( plane[x - 1][y] == 1 ) left();
+           else if ( plane[x][y + 1] == 1 ) below();
+           else return;
+   }
+   public static void needToTurnTestUL(int[][] plane, int x, int y){
+       if ( plane[x + 1][y] == 1 ) right();
+           else if ( plane[x][y + 1] == 1 ) below();
+           else return;
+   }
+   public static void needToTurnTestUR(int[][] plane, int x, int y){
+       if ( plane[x - 1][y] == 1 ) left();
+           else if ( plane[x][y + 1] == 1 ) below();
+           else return;
+   }
+   public static void needToTurnTestD(int[][] plane, int x, int y){
+       if ( plane[x + 1][y] == 1 ) right();
+           else if ( plane[x - 1][y] == 1 ) left();
+           else if ( plane[x][y - 1] == 1 ) above();
+           else return;
+   }
+   public static void needToTurnTestDR(int[][] plane, int x, int y){
+       if ( plane[x - 1][y] == 1 ) left();
+           else if ( plane[x][y - 1] == 1 ) above();
+           else return;
+   }
+   public static void needToTurnTestDL(int[][] plane, int x, int y){
+       if ( plane[x + 1][y] == 1 ) right();
+           else if ( plane[x][y - 1] == 1 ) above();
+           else return;
+   }
+   public static void needToTurnTestR(int[][] plane, int x, int y){
+       if ( plane[x - 1][y] == 1 ) left();
+           else if ( plane[x][y + 1] == 1 ) below();
+           else if ( plane[x][y - 1] == 1 ) above();
+           else return;
+   }
+   public static void needToTurnTestL(int[][] plane, int x, int y){
+       if ( plane[x + 1][y] == 1 ) right();
+           else if ( plane[x][y + 1] == 1 ) below();
+           else if ( plane[x][y - 1] == 1 ) above();
+           else return;
+   }
+    //----------------------------------------------------
+    public static void below() {
+        System.out.print("Below\n---------------\n");        
+    }
+    public static void above() {
+        System.out.print("Below\n---------------\n");        
+    }
+    public static void left() {
+        System.out.print("Below\n---------------\n");        
+    }
+    public static void right() {
+        System.out.print("Below\n---------------\n");
+    }
+    //-----------------------------
+
 }
