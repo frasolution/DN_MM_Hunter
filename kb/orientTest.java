@@ -137,6 +137,7 @@ public class OrientTest {
 
     }
     //-----------------------------
+    //-----------------------------
     public static OrientTest[] proxTest(int[] hunterX, int[] hunterY, int[][] plane){
         //int pl0 = plane[0].length; // required once so no compute effext can be seen
         int pl1 = plane[1].length;
@@ -161,69 +162,60 @@ public class OrientTest {
         }
    }
    //-----------------------------
-   public static void needToTurnTestM(int[][] plane, int x, int y){
-       if ( plane[x + 1][y] == 1 ) right();
-           else if ( plane[x - 1][y] == 1 ) left();
-           else if ( plane[x][y + 1] == 1 ) below();
-           else if ( plane[x][y - 1] == 1 ) above();
-           else return;
-   }
-   public static void needToTurnTestU(int[][] plane, int x, int y){
-       if ( plane[x + 1][y] == 1 ) right();
-           else if ( plane[x - 1][y] == 1 ) left();
-           else if ( plane[x][y + 1] == 1 ) below();
-           else return;
-   }
-   public static void needToTurnTestUL(int[][] plane, int x, int y){
-       if ( plane[x + 1][y] == 1 ) right();
-           else if ( plane[x][y + 1] == 1 ) below();
-           else return;
-   }
-   public static void needToTurnTestUR(int[][] plane, int x, int y){
-       if ( plane[x - 1][y] == 1 ) left();
-           else if ( plane[x][y + 1] == 1 ) below();
-           else return;
-   }
-   public static void needToTurnTestD(int[][] plane, int x, int y){
-       if ( plane[x + 1][y] == 1 ) right();
-           else if ( plane[x - 1][y] == 1 ) left();
-           else if ( plane[x][y - 1] == 1 ) above();
-           else return;
-   }
-   public static void needToTurnTestDR(int[][] plane, int x, int y){
-       if ( plane[x - 1][y] == 1 ) left();
-           else if ( plane[x][y - 1] == 1 ) above();
-           else return;
-   }
-   public static void needToTurnTestDL(int[][] plane, int x, int y){
-       if ( plane[x + 1][y] == 1 ) right();
-           else if ( plane[x][y - 1] == 1 ) above();
-           else return;
-   }
-   public static void needToTurnTestR(int[][] plane, int x, int y){
-       if ( plane[x - 1][y] == 1 ) left();
-           else if ( plane[x][y + 1] == 1 ) below();
-           else if ( plane[x][y - 1] == 1 ) above();
-           else return;
-   }
-   public static void needToTurnTestL(int[][] plane, int x, int y){
-       if ( plane[x + 1][y] == 1 ) right();
-           else if ( plane[x][y + 1] == 1 ) below();
-           else if ( plane[x][y - 1] == 1 ) above();
-           else return;
-   }
+    public static void needToTurnTestM(int[][] plane, int x, int y){
+        if ( plane[x + 1][y] == 1 ) needToTurnTestFin();
+            else if ( plane[x - 1][y] == 1 ) needToTurnTestFin();
+            else if ( plane[x][y + 1] == 1 ) needToTurnTestFin();
+            else if ( plane[x][y - 1] == 1 ) needToTurnTestFin();
+            else return;
+    }
+    public static void needToTurnTestU(int[][] plane, int x, int y){
+        if ( plane[x + 1][y] == 1 ) needToTurnTestFin();
+            else if ( plane[x - 1][y] == 1 ) needToTurnTestFin();
+            else if ( plane[x][y + 1] == 1 ) needToTurnTestFin();
+            else return;
+    }
+    public static void needToTurnTestUL(int[][] plane, int x, int y){
+        if ( plane[x + 1][y] == 1 ) needToTurnTestFin();
+            else if ( plane[x][y + 1] == 1 ) needToTurnTestFin();
+            else return;
+    }
+    public static void needToTurnTestUR(int[][] plane, int x, int y){
+        if ( plane[x - 1][y] == 1 ) needToTurnTestFin();
+            else if ( plane[x][y + 1] == 1 ) needToTurnTestFin();
+            else return;
+    }
+    public static void needToTurnTestD(int[][] plane, int x, int y){
+        if ( plane[x + 1][y] == 1 ) needToTurnTestFin();
+            else if ( plane[x - 1][y] == 1 ) needToTurnTestFin();
+            else if ( plane[x][y - 1] == 1 ) needToTurnTestFin();
+            else return;
+    }
+    public static void needToTurnTestDR(int[][] plane, int x, int y){
+        if ( plane[x - 1][y] == 1 ) needToTurnTestFin();
+            else if ( plane[x][y - 1] == 1 ) needToTurnTestFin();
+            else return;
+    }
+    public static void needToTurnTestDL(int[][] plane, int x, int y){
+        if ( plane[x + 1][y] == 1 ) needToTurnTestFin();
+            else if ( plane[x][y - 1] == 1 ) needToTurnTestFin();
+            else return;
+    }
+    public static void needToTurnTestR(int[][] plane, int x, int y){
+        if ( plane[x - 1][y] == 1 ) needToTurnTestFin();
+            else if ( plane[x][y + 1] == 1 ) needToTurnTestFin();
+            else if ( plane[x][y - 1] == 1 ) needToTurnTestFin();
+            else return;
+    }
+    public static void needToTurnTestL(int[][] plane, int x, int y){
+        if ( plane[x + 1][y] == 1 ) needToTurnTestFin();
+            else if ( plane[x][y + 1] == 1 ) needToTurnTestFin();
+            else if ( plane[x][y - 1] == 1 ) needToTurnTestFin();
+            else return;
+    }
     //----------------------------------------------------
-    public static void below() {
+    public static void needToTurnTestFin() {
         System.out.print("Below\n---------------\n");        
-    }
-    public static void above() {
-        System.out.print("Below\n---------------\n");        
-    }
-    public static void left() {
-        System.out.print("Below\n---------------\n");        
-    }
-    public static void right() {
-        System.out.print("Below\n---------------\n");
     }
     //-----------------------------
 
