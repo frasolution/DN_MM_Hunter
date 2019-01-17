@@ -25,7 +25,6 @@ public class InboundTest {
         }
         
         while ( notPassing > 0) {
-
             int x = rng.nextInt( plane[0].length );
             int y = rng.nextInt( plane[0].length );
             currTest = x + ( y * 0.1 );
