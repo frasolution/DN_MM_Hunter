@@ -94,62 +94,119 @@ public class moveTestDir{
         return y;
     }
     public static void main(String args[]) throws InterruptedException {
+        Random rng = new Random();
         moveTestDir testObj = new moveTestDir(1, 1, 0, 1);
         int[][] plane = new int[testObj.getX()*4][testObj.getY()*4];
-        for ( int i = 0 ; i < 10 ; i++) moveAndPrint(plane, testObj);
+        for ( int i = 0 ; i < 10 ; i++) moveAndPrint(plane, testObj, rng);
     }
 
-    public static void moveAndPrint(int[][] planeSize, moveTestDir testObj){
+    public static void moveAndPrint(int[][] planeSize, moveTestDir testObj, Random rng){
         int[][] plane = new int[planeSize[0].length][planeSize[1].length];
         //ADD RANDOM ORIENTATION BETWEEN 3 2 0 HERE FOR PRODUCTION
-        if(testObj.getX() == 0 ){
-            if(testObj.getY() == 0) {
+        int xm = plane[0].length - 1;
+        int ym = plane[1].length - 1;
+        if(testObj.getX() == 0 ){ // x is 0 
+            if(testObj.getY() == 0) { // y is 0 and x is 0 
                 if(testObj.getOri() == 3) testObj.setOri(0);
                 if(testObj.getOri() == 0) testObj.setOri(3);
                 justPrint(plane, testObj);
-            } else if (testObj.getY() == plane[1].length) {
+            }
+            if (testObj.getY() == ym) { // y is max and x is 0
                 if(testObj.getOri() == 0) testObj.setOri(1);
                 if(testObj.getOri() == 1) testObj.setOri(0);
                 justPrint(plane, testObj);
-            } else { 
-                if(testObj.getOri() == 0) testObj.setOri(1);
-                if(testObj.getOri() == 1) testObj.setOri(3);
-                if(testObj.getOri() == 3) testObj.setOri(0);
-                justPrint(plane, testObj);
             }
-        } else if (testObj.getX() == plane[0].length ) {
-            if(testObj.getY() == 0) {
+            if ( testObj.getY() != 0 || testObj.getY() != ym) { //y is in the middle and x is 0
+                if(testObj.getOri() == 1){
+                    switch(rng.nextInt(3-1)){
+                        case 0:
+                            testObj.setOri(0);
+                            justPrint(plane, testObj);
+                            return;
+                        case 1:
+                            testObj.setOri(2);
+                            justPrint(plane, testObj);
+                            return;
+                        case 3:
+                            testObj.setOri(3);
+                            justPrint(plane, testObj);
+                            return;
+                    }
+                }
+            }
+        }
+        if (testObj.getX() == xm ) { // x is max 
+            if(testObj.getY() == 0) { // y is 0 and x is max
                 if(testObj.getOri() == 3) testObj.setOri(2);
                 if(testObj.getOri() == 2) testObj.setOri(3);
                 justPrint(plane, testObj);
-            } else if (testObj.getY() == plane[1].length) {
+            }
+            if (testObj.getY() == ym) { // y is max and x is max
                 if(testObj.getOri() == 1) testObj.setOri(2);
                 if(testObj.getOri() == 2) testObj.setOri(1);
                 justPrint(plane, testObj);
-            } else {
-                if(testObj.getOri() == 1) testObj.setOri(2);
-                if(testObj.getOri() == 2) testObj.setOri(3);
-                if(testObj.getOri() == 3) testObj.setOri(1);
+            }
+            if ( testObj.getY() != 0 || testObj.getY() != ym) { // y is middle and x is max
+                if(testObj.getOri() == 0){
+                    switch(rng.nextInt(3-1)){
+                        case 0:
+                            testObj.setOri(2);
+                            justPrint(plane, testObj);
+                            return;
+                        case 1:
+                            testObj.setOri(1);
+                            justPrint(plane, testObj);
+                            return;
+                        case 3:
+                            testObj.setOri(3);
+                            justPrint(plane, testObj);
+                            return;
+                    }
+                } 
+            }
+        }
+        if(testObj.getX() != 0 && testObj.getX() != xm ) { //anything in the middle
+            if(testObj.getY() == 0) { // y is 0 and x is middle
+                if(testObj.getOri() == 1){
+                    switch(rng.nextInt(3-1)){
+                        case 0:
+                            testObj.setOri(0);
+                            justPrint(plane, testObj);
+                            return;
+                        case 1:
+                            testObj.setOri(2);
+                            justPrint(plane, testObj);
+                            return;
+                        case 3:
+                            testObj.setOri(3);
+                            justPrint(plane, testObj);
+                            return;
+                    }
+                }
+            } 
+            if (testObj.getY() == ym) { // y is max and x is middle
+                if(testObj.getOri() == 3){
+                    switch(rng.nextInt(3-1)){
+                        case 0:
+                            testObj.setOri(0);
+                            justPrint(plane, testObj);
+                            return;
+                        case 1:
+                            testObj.setOri(2);
+                            justPrint(plane, testObj);
+                            return;
+                        case 3:
+                            testObj.setOri(1);
+                            justPrint(plane, testObj);
+                            return;
+                    }
+                }
+            } 
+            if ( testObj.getY() != 0 || testObj.getY() != ym) {  // y is middle and x is middle
                 justPrint(plane, testObj);
             }
-        } else {
-            if(testObj.getY() == 0) {
-                if(testObj.getOri() == 0) testObj.setOri(2);
-                if(testObj.getOri() == 2) testObj.setOri(3);
-                if(testObj.getOri() == 3) testObj.setOri(0);
-                justPrint(plane, testObj);
-            } else if (testObj.getY() == plane[1].length) {
-                if(testObj.getOri() == 0) testObj.setOri(1);
-                if(testObj.getOri() == 1) testObj.setOri(2);
-                if(testObj.getOri() == 2) testObj.setOri(0);
-                justPrint(plane, testObj);
-            } else {
-                justPrint(plane, testObj);
-            }
-        } 
-
+        }
     }
-    
     public static void justPrint(int[][] plane, moveTestDir testObj){
         plane[testObj.getX()][testObj.getY()] = 1 ;
         System.out.print("------\n");
@@ -163,5 +220,6 @@ public class moveTestDir{
         System.out.print("------\n");
         testObj.move();
     }
+
 
 }
