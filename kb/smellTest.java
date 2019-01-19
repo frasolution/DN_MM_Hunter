@@ -42,17 +42,17 @@ public class smellTest {
             int y = hunterX[i];
             if( x == 0 ) {
                 if( y == 0 ) canSmellDL(plane, x, y);
-                else if ( y == pl1) canSmellDR(plane, x, y);
-                else canSmellD(plane, x, y);
+                else if ( y == pl1) canSmellUL(plane, x, y);
+                else canSmellL(plane, x, y);
             }
             else if ( x == plane[0].length ) {
-                if( y == 0 ) canSmellUL(plane, x, y);
+                if( y == 0 ) canSmellDR(plane, x, y);
                 else if ( y == pl1 ) canSmellUR(plane, x, y);
-                else canSmellU(plane, x, y);
+                else canSmellR(plane, x, y);
             }
             else {
-                if( y == 0 ) canSmellU(plane, x, y);
-                else if ( y == pl1) canSmellD(plane, x, y);
+                if( y == 0 ) canSmellD(plane, x, y);
+                else if ( y == pl1) canSmellU(plane, x, y);
                 else canSmellM(plane, x, y);
             }
         }
@@ -89,40 +89,40 @@ public class smellTest {
     //----------------------------------------------------
     public static void canSmellUR(int[][] plane, int x, int y){
         if ( plane[x - 1][y] == 1 ) left();
-            else if ( plane[x][y + 1] == 1 ) below();
+            else if ( plane[x][y - 1] == 1 ) below();
             else return;
     }
     //----------------------------------------------------
     public static void canSmellD(int[][] plane, int x, int y){
         if ( plane[x + 1][y] == 1 ) right();
             else if ( plane[x - 1][y] == 1 ) left();
-            else if ( plane[x][y - 1] == 1 ) above();
+            else if ( plane[x][y + 1] == 1 ) above();
             else return;
     }
     //----------------------------------------------------
     public static void canSmellDR(int[][] plane, int x, int y){
         if ( plane[x - 1][y] == 1 ) left();
-            else if ( plane[x][y - 1] == 1 ) above();
+            else if ( plane[x][y + 1] == 1 ) above();
             else return;
     }
     //----------------------------------------------------
     public static void canSmellDL(int[][] plane, int x, int y){
         if ( plane[x + 1][y] == 1 ) right();
-            else if ( plane[x][y - 1] == 1 ) above();
+            else if ( plane[x][y + 1] == 1 ) above();
             else return;
     }
     //----------------------------------------------------
     public static void canSmellR(int[][] plane, int x, int y){
         if ( plane[x - 1][y] == 1 ) left();
-            else if ( plane[x][y + 1] == 1 ) below();
-            else if ( plane[x][y - 1] == 1 ) above();
+            else if ( plane[x][y - 1] == 1 ) below();
+            else if ( plane[x][y + 1] == 1 ) above();
             else return;
     }
     //----------------------------------------------------
     public static void canSmellL(int[][] plane, int x, int y){
         if ( plane[x + 1][y] == 1 ) right();
-            else if ( plane[x][y + 1] == 1 ) below();
-            else if ( plane[x][y - 1] == 1 ) above();
+            else if ( plane[x][y - 1] == 1 ) below();
+            else if ( plane[x][y + 1] == 1 ) above();
             else return;
     }
     //----------------------------------------------------
@@ -130,13 +130,13 @@ public class smellTest {
         System.out.print("Below\n---------------\n");        
     }
     public static void above() {
-        System.out.print("Below\n---------------\n");        
+        System.out.print("above\n---------------\n");        
     }
     public static void left() {
-        System.out.print("Below\n---------------\n");        
+        System.out.print("left\n---------------\n");        
     }
     public static void right() {
-        System.out.print("Below\n---------------\n");
+        System.out.print("right\n---------------\n");
     }
     //----------------------------------------------------
     public static void printU(int shortSide , int[] hunterX, int[] hunterY) {

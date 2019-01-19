@@ -1,0 +1,47 @@
+
+public class viscone{
+    public static void main(String[] args) {
+        int[][] plane = new int[10][10];
+        int[][] test = new int[10][10];
+        int len = 6;
+        //double pos = 1.2;
+        int x = 0;
+        int y = 3;
+        test = fillStart(plane, len, x, y);
+        printCust(test);
+    }
+    
+    public static int[][] fillStart(int[][] plane, int len, int x, int y) {
+        int[][] arrCurr = new int[plane[0].length][plane[1].length];        
+        x++;
+        len--;
+        arrCurr[x][y] = 1;
+        int count = 3;
+        arrCurr = fillAct(arrCurr, len, count, x, y);
+        return arrCurr;
+    }
+
+    public static int[][] fillAct(int[][] arrCurr, int len, int count, int x, int y){
+        //out bounds protect
+        if(y <= 0 || x >= arrCurr[0].length) return arrCurr;
+        y--;
+        x++;
+        //actual writing
+        for(int i = 0; i < count; i++) arrCurr[x][y+i] = 1;
+        count = count + 2;
+        fillAct(arrCurr, len, count, x, y);
+        return arrCurr;
+    }
+
+    public static void printCust(int[][] arrCurr) {
+        for( int y = 0 ; y < arrCurr[0].length ; y++ ) {
+            for ( int x = 0 ; x < arrCurr[1].length ; x++ ) {
+                if(arrCurr[x][y] == 1) System.out.print('*');
+                if(arrCurr[x][y] == 0) System.out.print('+');
+            }
+            System.out.print("\n");
+        }
+        
+    }
+
+}
