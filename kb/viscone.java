@@ -1,4 +1,3 @@
-import com.sun.org.apache.bcel.internal.generic.BREAKPOINT;
 
 public class viscone{
     public static void main(String[] args) {
@@ -12,7 +11,8 @@ public class viscone{
         int fillSize = printCust(test);
         plane[0][3] = 5;
         plane[3][4] = 3;
-        
+        int[] firstOverlap = new int[2];
+        firstOverlap = overlap(plane, test, fillSize, 1);
     }
     
     public static int[][] fillStart(int[][] plane, int len, int x, int y) {
@@ -43,35 +43,100 @@ public class viscone{
     }
 
     public static int[] overlap (int[][] plane, int[][] test, int fillSize, int objOri) {
-        int[] returner = new int[fillSize*3];
+        int[] returner = new int[2];
         switch(objOri){
             case 0 : 
-                
-                break;
-            case 1 :
-                break;
-            case 2 :
-                break;
-            case 3 :
-                break;
-        }
-        if(objOri == 0 && objOri == 2){
-
-        }
-        if(objOri == 1 && objOri == 3){
-
-        }
-        for ( int iy = 0 ; iy < plane[1].length ; iy++ ){
-            for ( int ix = 0 ; ix < plane[0].length ; ix++){
-                if(plane[ix][iy] != 0 && test[ix][iy] != 0){
-
+                for ( int ix = 0 ; ix < plane[0].length ; ix++ ) {
+                    for ( int iy = 0 ; iy < plane[1].length ; iy++ ) {
+                        if(plane[ix][iy] != 0 && test[ix][iy] != 0){
+                            switch(test[ix][iy]){
+                                case 1:
+                                    returner[0] = ix;
+                                    returner[1] = iy;
+                                    return returner;
+                                case 2:
+                                    returner[0] = ix;
+                                    returner[1] = iy;
+                                    return returner;
+                                case 3:
+                                    returner[0] = ix;
+                                    returner[1] = iy;
+                                    return returner;
+                            }
+                        }
+                    }
                 }
-            }
+
+            case 1 :
+                for ( int iy = 0 ; iy < plane[1].length ; iy++){
+                    for( int ix = 0 ; ix < plane[0].length ; ix++ ){
+                        if(plane[ix][iy] != 0 && test[ix][iy] != 0){
+                            if(plane[ix][iy] != 0 && test[ix][iy] != 0){
+                                switch(test[ix][iy]){
+                                    case 1:
+                                        returner[0] = ix;
+                                        returner[1] = iy;
+                                        return returner;
+                                    case 2:
+                                        returner[0] = ix;
+                                        returner[1] = iy;
+                                        return returner;
+                                    case 3:
+                                        returner[0] = ix;
+                                        returner[1] = iy;
+                                        return returner;
+                                }
+                            }
+                        }
+                    }
+                }
+            case 2 :
+                for ( int ix = 0 ; ix < plane[0].length ; ix++){
+                    for ( int iy = 0 ; iy < plane[1].length ; iy++){
+                        if(plane[ix][iy] != 0 && test[ix][iy] != 0){
+                            if(plane[ix][iy] != 0 && test[ix][iy] != 0){
+                                switch(test[ix][iy]){
+                                    case 1:
+                                        returner[0] = ix;
+                                        returner[1] = iy;
+                                        return returner;
+                                    case 2:
+                                        returner[0] = ix;
+                                        returner[1] = iy;
+                                        return returner;
+                                    case 3:
+                                        returner[0] = ix;
+                                        returner[1] = iy;
+                                        return returner;
+                                }
+                            }
+                        }
+                    }
+                }
+            case 3 :
+                for ( int iy = 0 ; iy < plane[1].length ; iy++ ) {
+                    for ( int ix = 0 ; ix < plane[0].length ; ix++ ) {
+                        if(plane[ix][iy] != 0 && test[ix][iy] != 0){
+                            switch(test[ix][iy]){
+                                case 1:
+                                    returner[0] = ix;
+                                    returner[1] = iy;
+                                    return returner;
+                                case 2:
+                                    returner[0] = ix;
+                                    returner[1] = iy;
+                                    return returner;
+                                case 3:
+                                    returner[0] = ix;
+                                    returner[1] = iy;
+                                    return returner;
+                            }
+                        }
+                    } 
+                }
         }
         return returner;
     }
-
-    if(plane[ix][iy] != 0 && test[ix][iy] != 0)
 
     public static int printCust(int[][] arrCurr) {
         int fillSize = 0;
