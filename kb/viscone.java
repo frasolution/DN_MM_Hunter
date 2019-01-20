@@ -13,7 +13,8 @@ public class viscone{
         plane[3][4] = 3;
         int[] firstOverlap = new int[2];
         firstOverlap = overlap(plane, test, 0);
-        
+        System.out.println("------------");
+        System.out.println(firstOverlap[0] + " " + firstOverlap[1]);
     }
     
     public static int[][] fillStart(int[][] plane, int len, int x, int y) {
