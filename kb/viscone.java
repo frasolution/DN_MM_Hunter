@@ -8,11 +8,12 @@ public class viscone{
         int x = 0;
         int y = 3;
         test = fillStart(plane, len, x, y);
-        int fillSize = printCust(test);
+        printCust(test);
         plane[0][3] = 5;
         plane[3][4] = 3;
         int[] firstOverlap = new int[2];
-        firstOverlap = overlap(plane, test, fillSize, 1);
+        firstOverlap = overlap(plane, test, 0);
+        
     }
     
     public static int[][] fillStart(int[][] plane, int len, int x, int y) {
@@ -42,7 +43,7 @@ public class viscone{
         return arrCurr;
     }
 
-    public static int[] overlap (int[][] plane, int[][] test, int fillSize, int objOri) {
+    public static int[] overlap (int[][] plane, int[][] test, int objOri) {
         int[] returner = new int[2];
         switch(objOri){
             case 0 : 
@@ -138,20 +139,16 @@ public class viscone{
         return returner;
     }
 
-    public static int printCust(int[][] arrCurr) {
-        int fillSize = 0;
+    public static void printCust(int[][] arrCurr) {
         for( int y = 0 ; y < arrCurr[0].length ; y++ ) {
             for ( int x = 0 ; x < arrCurr[1].length ; x++ ) {
                 if(arrCurr[x][y] != 0){
                     System.out.print('*');
-                    fillSize++;
                 }
                 else System.out.print('+');
             }
             System.out.print("\n");
         }
-        return fillSize;
-        
     }
 
 }
