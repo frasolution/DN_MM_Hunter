@@ -1,3 +1,4 @@
+import com.sun.org.apache.bcel.internal.generic.BREAKPOINT;
 
 public class viscone{
     public static void main(String[] args) {
@@ -8,15 +9,15 @@ public class viscone{
         int x = 0;
         int y = 3;
         test = fillStart(plane, len, x, y);
-        printCust(test);
+        int fillSize = printCust(test);
         plane[0][3] = 5;
         plane[3][4] = 3;
-
+        
     }
     
     public static int[][] fillStart(int[][] plane, int len, int x, int y) {
         int[][] arrCurr = new int[plane[0].length][plane[1].length];        
-        x++;
+        x++;    
         len--;
         arrCurr[x][y] = 1;
         int count = 3;
@@ -41,24 +42,50 @@ public class viscone{
         return arrCurr;
     }
 
-    public static int[][][] overlap (int[][] plane, int[][] test) {
-        int[][][] returner = new int[plane[0].length][plane[1].length];
+    public static int[] overlap (int[][] plane, int[][] test, int fillSize, int objOri) {
+        int[] returner = new int[fillSize*3];
+        switch(objOri){
+            case 0 : 
+                
+                break;
+            case 1 :
+                break;
+            case 2 :
+                break;
+            case 3 :
+                break;
+        }
+        if(objOri == 0 && objOri == 2){
+
+        }
+        if(objOri == 1 && objOri == 3){
+
+        }
         for ( int iy = 0 ; iy < plane[1].length ; iy++ ){
             for ( int ix = 0 ; ix < plane[0].length ; ix++){
-                if 
+                if(plane[ix][iy] != 0 && test[ix][iy] != 0){
+
+                }
             }
         }
         return returner;
     }
 
-    public static void printCust(int[][] arrCurr) {
+    if(plane[ix][iy] != 0 && test[ix][iy] != 0)
+
+    public static int printCust(int[][] arrCurr) {
+        int fillSize = 0;
         for( int y = 0 ; y < arrCurr[0].length ; y++ ) {
             for ( int x = 0 ; x < arrCurr[1].length ; x++ ) {
-                if(arrCurr[x][y] == 1) System.out.print('*');
-                if(arrCurr[x][y] == 0) System.out.print('+');
+                if(arrCurr[x][y] != 0){
+                    System.out.print('*');
+                    fillSize++;
+                }
+                else System.out.print('+');
             }
             System.out.print("\n");
         }
+        return fillSize;
         
     }
 

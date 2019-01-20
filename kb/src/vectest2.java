@@ -1,4 +1,4 @@
-package kb.src;
+package src;
 public class vectest2{
     private String name;
     private int number;
@@ -18,6 +18,7 @@ public class vectest2{
     public void setNumber(int number) {
         this.number = number;
     }
+
     public void setAll(String name, int number){
         this.name = name;
         this.number = number;
@@ -35,4 +36,11 @@ public class vectest2{
         return number;
     }
 
+    public boolean custCmp(vectest2 other){
+        int check = 0;
+        if(this.getName() == other.getName() ) check++;
+        if(this.getNumber() == other.getNumber() ) check++;
+        if(check == 2 ) return true;
+        else return false;
+    }
 }
