@@ -41,5 +41,7 @@ public class vectest{
         System.out.print("Size " + vec.size() + "\n");
         for ( int i = 0; i < vec.size() ; i++ ) System.out.println(vec.elementAt(i).getName() + " " + vec.elementAt(i).getNumber());
         for ( int i = 0 ; i < vec.size() ; i++ ) System.out.println(vec.elementAt(i).custCmp(new vectest2("oli",2)));
+        for ( int i = 0; i < vec.size() ; i++ ) System.out.println(vec.elementAt(i).getName() + " " + vec.elementAt(i).getNumber());
+        for ( int i = 0 ; i < vec.size() ; i++ ) System.out.println(vec.elementAt(i).custCmp(new vectest2("oli",2)));
     }
 }

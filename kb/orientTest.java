@@ -127,7 +127,8 @@ public class OrientTest {
     }
     //-----------------------------
     //-----------------------------
-    public static OrientTest[] rotTest(OrientTest[] hunters, int[][] plane){
+    //public static OrientTest[] rotTest(OrientTest[] hunters, int[][] plane){
+    public static void rotTest(OrientTest[] hunters, int[][] plane){
         int[] hunterX = new int[hunters.length];
         int[] hunterY = new int[hunters.length];
         for ( int i = 0 ; hunters.length > i ; i++ ) { 
@@ -138,7 +139,8 @@ public class OrientTest {
     }
     //-----------------------------
     //-----------------------------
-    public static OrientTest[] proxTest(int[] hunterX, int[] hunterY, int[][] plane){
+    //public static OrientTest[] proxTest(int[] hunterX, int[] hunterY, int[][] plane){
+    public static void proxTest(int[] hunterX, int[] hunterY, int[][] plane){
         //int pl0 = plane[0].length; // required once so no compute effext can be seen
         int pl1 = plane[1].length;
         for ( int i = 0 ; i < hunterX.length ; i++ ) {
