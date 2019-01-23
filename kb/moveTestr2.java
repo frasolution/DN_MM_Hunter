@@ -1,8 +1,4 @@
-package kb;
-
 import java.util.*;
-import java.lang.*;
-
 public class moveTestr2{
     public static void main(String[] args) throws InterruptedException{
         Scanner sc = new Scanner(System.in);

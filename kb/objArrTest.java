@@ -1,7 +1,4 @@
-package kb;
-
 import java.util.Scanner;
-
 public class objArrTest{
     private int number;
     private String name;
