@@ -3,6 +3,7 @@ import java.util.Scanner;
 
 public class main{
     public static void main(String[] args) {
+        
         // create Scanner and Random
         Scanner sc = new Scanner(System.in);
         Random rng = rngCreator(sc);
@@ -10,7 +11,7 @@ public class main{
         // Create Plane
         int plane[][] = planeCreate(sc);
         
-        // Create 
+        // Create OBJ VEC 
         
 
         //CLOSE
@@ -38,3 +39,5 @@ public class main{
         return publicPlane;
     }
 }
+//-------------------------------------------------
+

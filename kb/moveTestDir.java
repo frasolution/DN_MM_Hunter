@@ -95,7 +95,7 @@ public class moveTestDir{
     }
     public static void main(String args[]) throws InterruptedException {
         Random rng = new Random();
-        moveTestDir testObj = new moveTestDir(1, 1, 0, 1);
+        moveTestDir testObj = new moveTestDir(1, 1, 1, 1);
         int[][] plane = new int[testObj.getX()*4][testObj.getY()*4];
         for ( int i = 0 ; i < 10 ; i++) moveAndPrint(plane, testObj, rng);
     }
