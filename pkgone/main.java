@@ -11,7 +11,7 @@ public class main{
         int plane[][] = planeCreate(sc);
         
         // Create 
-
+        
 
         //CLOSE
         sc.close();
