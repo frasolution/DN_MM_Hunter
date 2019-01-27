@@ -60,26 +60,48 @@ public class genOriTest{
     public static Vector<oriObj> verifVec(Vector<oriObj> oriVec, int xLen, int yLen) {
 //------------------------------        
         Vector<oriObj> oriVecVerif = new Vector<oriObj>();
-        int[][] vecPlane = new int[xLen][yLen];
-        int[][] oriPlane = new int[xLen][yLen];
+		// IMPORTANT OVERRIDE ARRAY OVERRIDE WITH VALUE oriVecsize() + 1; 
+		int[][] vecPlane = new int[xLen][yLen];
+		int[][] oriPlane = new int[xLen][yLen];
 //------------------------------
-        for (int i = 0; i < oriVec.size() ; i++) {
+		int override = oriVec.size() + 1;
+		vecPlane = overArr(vecPlane, override);
+		override = 4;
+		oriPlane = overArr(oriPlane, override);
+//------------------------------
+		for (int i = 0; i < oriVec.size() ; i++) {
             vecPlane[oriVec.elementAt(i).getX()][oriVec.elementAt(i).getY()] = i;
             oriPlane[oriVec.elementAt(i).getX()][oriVec.elementAt(i).getY()] = oriVec.elementAt(i).getOri();
-        }
+		}
 //------------------------------
 
 //------------------------------
         return oriVecVerif;
-    }
+	}
+	
+//------------------------------
+//------------------------------
 
-        public static void printArr(int[][] plane) {
-                for (int i = 0; i < ySize; i++) {
-                        for (int j = 0; j < xSize; j++) {
-                            
-                        }
-                        
-                    }
-        }
+	public static void printArr(int[][] plane) {
+		for ( int i = 0; i < plane[0].length ; i++ ) {
+            for ( int j = 0; j < plane[1].length ; j++ ) {
+				System.out.print(plane[j][i]);
+			}
+			System.out.println("");
+		}
+		return;
+	}
+
+//------------------------------
+//------------------------------
+	
+	public static int[][] overArr(int[][] plane, int overValue) {
+		for ( int i = 0; i < plane[0].length ; i++ ) {
+            for ( int j = 0; j < plane[1].length ; j++ ) {
+				plane[j][i] = overValue;
+			}
+		}
+		return plane; 
+	}
 
 }
