@@ -14,11 +14,11 @@ for y
     for x  
 
 check if there is a where x.ori == this.ori use a object function equalsOri(obj o)    
- x  
-xcx  
+x  
+cx  
     if the obj is x == 0 do except left x if the obj is x == x.max so either
-    x    x
-    cx  xc
+    x  x
+    cx c
 
 # important
 try handling in a later step we first want detection working here
