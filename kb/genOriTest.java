@@ -19,7 +19,7 @@ public class genOriTest{
     }
     
     //------------------------------
-    public static Vector oriVecCreaVector(Random rng) {
+    public static Vector<oriObj> oriVecCreaVector(Random rng) {
         System.out.println("please enter x y objectCount");
         Scanner sc = new Scanner(System.in);
 //------------------------------        
@@ -38,8 +38,8 @@ public class genOriTest{
         double testCord = 0;
 //------------------------------
         for (int i = 0; i < objNumber; i++) {
-            x = sc.nextInt( xLen - 1 );
-            y = sc.nextInt( yLen - 1 );
+            x = rng.nextInt( xLen - 1 );
+            y = rng.nextInt( yLen - 1 );
             testCord = x + y*0.1;
             if(validSet.contains(testCord)) i--;
             else {
@@ -54,7 +54,10 @@ public class genOriTest{
         return oriVec;
     }
 
-    public static Vector verifVec(Vector oriVec, int xLen, int yLen) {
+//------------------------------
+//------------------------------
+
+    public static Vector<oriObj> verifVec(Vector<oriObj> oriVec, int xLen, int yLen) {
 //------------------------------        
         Vector<oriObj> oriVecVerif = new Vector<oriObj>();
         int[][] vecPlane = new int[xLen][yLen];
@@ -70,14 +73,13 @@ public class genOriTest{
         return oriVecVerif;
     }
 
-    /** RE-USE THIS FOR TO PRINT AND READ ARRAY
-        for (int i = 0; i < ySize; i++) {
-            for (int j = 0; j < xSize; j++) {
-                
-            }
-            
+        public static void printArr(int[][] plane) {
+                for (int i = 0; i < ySize; i++) {
+                        for (int j = 0; j < xSize; j++) {
+                            
+                        }
+                        
+                    }
         }
-        //------------------------------
-     */
 
 }
