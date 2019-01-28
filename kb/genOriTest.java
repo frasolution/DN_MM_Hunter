@@ -14,7 +14,7 @@ public class genOriTest {
 		// genrate valid coordinates
 		Vector<oriObj> oriVec = new Vector<oriObj>();
 
-		//
+		//correct the orientation of neighbouring objects
 		oriVec = oriVecCreaVector(rng);
 	}
 
@@ -69,7 +69,7 @@ public class genOriTest {
 		// ------------------------------
 		int override = oriVec.size() + 1;
 		vecPlane = overArr(vecPlane, override);
-		override = 4;
+		override = 4; //orientations are 0-3 SO 4 IS A SAFE VALUE FOR ORIENTATION
 		oriPlane = overArr(oriPlane, override);
 		// ------------------------------
 		for (int i = 0; i < oriVec.size(); i++) {
@@ -78,6 +78,15 @@ public class genOriTest {
 		}
 		// ------------------------------
 		int[][] oriPlane2 = oriVerif(oriPlane);
+		//printArr(oriPlane2);
+		// ------------------------------
+		for (int i = 0; i < oriPlane[1].length - 1 ; i++) {
+			for (int j = 0; j < oriPlane[0].length - 1 ; j++) {
+				if(oriPlane[j][i] != oriPlane2[j][i]){
+					oriVec.elementAt(vecPlane[j][i]).setOri(oriPlane2[j][i]);
+				}
+			}	
+		}
 		// ------------------------------
 		return oriVecVerif;
 	}
@@ -100,19 +109,17 @@ public class genOriTest {
 	// ------------------------------
 	public static int[][] oriVerif(int[][] oriPlane) {
         Random rngRandom = new Random();
-        for (int i = 0; i < oriPlane[1].length; i++) {
-            for (int j = 0; j < oriPlane[0].length; j++) {
-				if(j < oriPlane[1].length - 1){
-					if ( j == oriPlane[0].length - 1 ) {
-						if(oriPlane[i][j] == oriPlane[i][j+1]){
-							reroll(oriPlane[i][j], rngRandom); 
-							//
-							//j i i j ?
-						}
-						if(oriPlane[][]) 
+        for ( int i = 0; i < oriPlane[1].length; i++) {
+            for ( int j = 0; j < oriPlane[0].length; j++) {
+				if( i < oriPlane[1].length - 1){
+					if ( j < oriPlane[0].length - 2 ) { //we test (x+1) therfore we need to -2 here already
+						if(oriPlane[j][i] == oriPlane[j][i+1] && !(oriPlane[j][i] == 4) ) oriPlane[j][i+1] = reroll(oriPlane[j][i], rngRandom);
+						if(oriPlane[j][i] == oriPlane[j+1][i] && !(oriPlane[j][i] == 4) ) oriPlane[j+1][i] = reroll(oriPlane[j][i], rngRandom);
 					}else{
-
+						if(oriPlane[j][i] == oriPlane[j][i+1] && !(oriPlane[j][i] == 4) ) oriPlane[j][i+1] = reroll(oriPlane[j][i], rngRandom);
 					}
+				}else{
+					if ( j < oriPlane[0].length - 1) if(oriPlane[j][i] == oriPlane[j+1][i] && !(oriPlane[j][i] == 4) ) oriPlane[j+1][i] = reroll(oriPlane[j][i], rngRandom);
 				}
             }
         }
@@ -141,5 +148,6 @@ public class genOriTest {
 		}
 		return plane;
 	}
+	// ------------------------------
 
 }
