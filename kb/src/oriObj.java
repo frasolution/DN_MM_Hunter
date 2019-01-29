@@ -6,6 +6,7 @@ public class oriObj{
     private int y;
     private int ori;
     private int faction;
+    private goalPost goalPost;
 
     public oriObj(int x, int y, int ori, int faction){
         this.x = x;
@@ -75,5 +76,16 @@ public class oriObj{
     public void setFaction(int faction) {
         this.faction = faction;
     }
-
+    /**
+     * @param goalPost the goalPost to set
+     */
+    public void setGoalPost(goalPost goalPost) {
+        this.goalPost = goalPost;
+    }
+    /**
+     * @return the goalPost
+     */
+    public goalPost getGoalPost() {
+        return goalPost;
+    }
 }
