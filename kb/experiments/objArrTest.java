@@ -21,6 +21,7 @@ public class objArrTest{
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in); //just for demonstartion
         int arrsize = sc.nextInt(); //can grab the number of objects that need to be crated from ui
+        sc.close();
         objArrTest [] arrs = new objArrTest[arrsize]; 
         // create an array for objects to be saved in. USE ARRAYLIST FOR THIS IN FINAL FOR EASY EXPANSION
         for(int i = 0 ; i < arrsize ; i++ ){

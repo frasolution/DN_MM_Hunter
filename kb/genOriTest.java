@@ -141,9 +141,10 @@ public class genOriTest {
 	// ------------------------------
 	// ------------------------------
 	public static int[][] overArr(int[][] plane, int overValue) {
-		for (int i = 0; i < plane[0].length; i++) {
-			for (int j = 0; j < plane[1].length; j++) {
+		for (int i = 0; i < plane[1].length - 1 ; i++) {
+			for (int j = 0; j < plane[0].length - 1 ; j++) {
 				plane[j][i] = overValue;
+				//System.out.println(j + " " + i + " now equals " + overValue); //dev tool for array fill debug
 			}
 		}
 		return plane;

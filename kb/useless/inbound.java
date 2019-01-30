@@ -1,6 +1,7 @@
-package useless;
+
+package useless ;
 import java.util.*;
-public class InboundTest {
+public class inbound {
     public static void main(String[] args) {
         Random rng = new Random();
         int[][] plane = new int[8][8];
