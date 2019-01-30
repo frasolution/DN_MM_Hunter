@@ -18,3 +18,7 @@ gen a valid Vector of obj that will contain only objects that point in diffrent 
 gen an array with also valid directions
 ## smellTest
 test if other thing is near by without violating out of bounds exception
+## vectest
+testing the viabilty of vectors instead of arrays for saving objects
+## viscone
+testing if an object will be detected by another object
