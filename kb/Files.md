@@ -8,8 +8,10 @@ smelltest is still needed for out of bound safe checks on the outside
 main point is to move array values all in one direction to maybe gen moving texts and so on
 ## moveTestDir
 testing if in a random envoirement the thing move in the right direction and will bound from borders
-## objArrTest
+## objArrTest // outdated
 gen valid arrays of a specific count here shortest-side/2
+## genOriTest
+gen a valid Vector of obj that will contain only objects that point in diffrent directions
 ## orientTest --DEV
 gen an array with also valid directions
 ## smellTest
