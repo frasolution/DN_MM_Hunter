@@ -22,6 +22,7 @@ public class viscone{  //this should be a class function
     public static int[][] fillStart(int[][] plane, int len, int x, int y) {
         int[][] arrCurr = new int[plane[0].length][plane[1].length];        
         x++;
+        len--;
         arrCurr[x][y] = 1;
         int count = 3;
         arrCurr = fillAct(arrCurr, len, count, x, y);
@@ -37,7 +38,7 @@ public class viscone{  //this should be a class function
         x++;
         //actual writing
         for(int i = 0; i < count; i++) { //if the there is
-            if(!(y+i < 0 || x+i <0 || y+i > arrCurr[1].length - 1 || x+i > arrCurr[0].length - 1 )){    
+            if(!(y+i < 0 || x+i <0 || y+i > arrCurr[1].length - 1 || x > arrCurr[0].length - 1 )){    
                 if(y0 > y+i ) arrCurr[x][y+i] = 1;
                 if(y0 == y+i ) arrCurr[x][y+i] = 2;
                 if(y0 < y+i) arrCurr[x][y+i] = 3;
