@@ -1,16 +1,15 @@
 
-public class viscone{
+public class viscone{  //this should be a class function
     public static void main(String[] args) {
         int[][] plane = new int[10][10];
         int[][] test = new int[10][10];
-        int len = 6;
-        //double pos = 1.2;
-        int x = 0;
-        int y = 3;
+        int len = 6; //This is the length of the vis cone
+        int x = 0; //x of the start point
+        int y = 2; //y of the start point
         test = fillStart(plane, len, x, y);
         printCust(test);
-        plane[0][3] = 5;
-        plane[3][4] = 3;
+        plane[0][3] = 5; //this is you
+        plane[3][4] = 3; //this is the other object
         int[] firstOverlap = new int[2];
         firstOverlap = overlap(plane, test, 0);
         System.out.println("------------");
@@ -22,8 +21,7 @@ public class viscone{
     
     public static int[][] fillStart(int[][] plane, int len, int x, int y) {
         int[][] arrCurr = new int[plane[0].length][plane[1].length];        
-        x++;    
-        len--;
+        x++;
         arrCurr[x][y] = 1;
         int count = 3;
         arrCurr = fillAct(arrCurr, len, count, x, y);
@@ -32,17 +30,21 @@ public class viscone{
 
     public static int[][] fillAct(int[][] arrCurr, int len, int count, int x, int y){
         //out bounds protect
+        System.out.println(len+ "\n");
         int y0 = y;
-        if(y <= 0 || x >= arrCurr[0].length) return arrCurr;
+        if(len == 0) return arrCurr;
         y--;
         x++;
         //actual writing
         for(int i = 0; i < count; i++) { //if the there is
-            if(y0 > y+i ) arrCurr[x][y+i] = 1;
-            if(y0 == y+i ) arrCurr[x][y+i] = 2;
-            if(y0 < y+i) arrCurr[x][y+i] = 3;
+            if(!(y+i < 0 || x+i <0 || y+i > arrCurr[1].length - 1 || x+i > arrCurr[0].length - 1 )){    
+                if(y0 > y+i ) arrCurr[x][y+i] = 1;
+                if(y0 == y+i ) arrCurr[x][y+i] = 2;
+                if(y0 < y+i) arrCurr[x][y+i] = 3;
+            }
         }
         count = count + 2;
+        len--;
         fillAct(arrCurr, len, count, x, y);
         return arrCurr;
     }
