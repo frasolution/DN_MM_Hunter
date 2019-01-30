@@ -1,5 +1,5 @@
+package useless;
 import java.util.*;
-import java.lang.*;
 public class InboundTest {
     public static void main(String[] args) {
         Random rng = new Random();

@@ -1,0 +1,18 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - moveTestr1",
+            "request": "launch",
+            "mainClass": "useless.moveTestr1",
+            "projectName": "kb_a64e013f"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - InboundTest",
+            "request": "launch",
+            "mainClass": "useless.InboundTest",
+            "projectName": "kb_a64e013f"
+        }
+    ]
+}

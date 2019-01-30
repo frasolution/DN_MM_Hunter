@@ -1,3 +1,5 @@
+
+package experiments;
 import java.util.Scanner;
 public class objArrTest{
     private int number;

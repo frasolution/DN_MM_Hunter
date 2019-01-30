@@ -1,5 +1,6 @@
-import java.util.Random;
 
+package experiments;
+import java.util.Random;
 public class ArrPassTest{
     public static void main(String args[]) {
         int[] smallArr = new int[3];

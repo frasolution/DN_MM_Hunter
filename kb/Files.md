@@ -1,11 +1,6 @@
 # Files in this folder are proof of concept files
 ## ArrPassTest
 passing arrays and values from and to functions
-## InboundTest --useless?
-generating a more easy to work with array  
-smelltest is still needed for out of bound safe checks on the outside7
-## moveTestr (all of them)
-main point is to move array values all in one direction to maybe gen moving texts and so on
 ## moveTestDir  
     ## ISSUES  
     - refactor for all directions and all movementspeeds
