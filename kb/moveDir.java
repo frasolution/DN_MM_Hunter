@@ -12,7 +12,7 @@ public class moveDir {
     Vector<oriObj> objVec = new Vector<oriObj>();
     objVec.add(new oriObj(1, 1, 0, 1, 1 ));
     int[][] genericPlane = new int[4][4];
-    int[] arrMaxSize = { genericPlane.length - 1, genericPlane[0].length -1};
+    const int[] arrMaxSize = { genericPlane.length - 1, genericPlane[0].length -1};
     objVec = moverOriObjs(objVec, genericPlane, rng, arrMaxSize);
     System.out.println(" exit");
     }
@@ -183,7 +183,7 @@ public class moveDir {
 //y is mid and x is mid
 //------
                 if (posi[1] != 0 && posi[1] != arrMaxSize[1]) {
-                    
+
                 }
 //------
             }

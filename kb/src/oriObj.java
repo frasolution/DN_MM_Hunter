@@ -8,6 +8,7 @@ public class oriObj{
     private int ori;
     private int faction;
     private int vel;
+    private int hp;
 
     public oriObj(int x, int y, int ori, int faction, int vel){
         this.x = x;
@@ -21,6 +22,14 @@ public class oriObj{
         boolean test = false;
         if(this.getX() == o.getX() && this.getY() == o.getY()) test = true;
         return test;
+    }
+    public boolean attackGoalCheck( oriObj o ){
+        boolean returner = true;
+        if(this.getFaction() != o.getFaction()){
+            if(this.getFaction() > o.getFaction()){}
+            if(this.getFaction() < o.getFaction()) returner = false; 
+        } else returner = false;
+        return returner;
     }
 
     /**
@@ -89,5 +98,17 @@ public class oriObj{
      */
     public int getVel() {
         return vel;
+    }
+    /**
+     * @param hp the hp to set
+     */
+    public void setHp(int hp) {
+        this.hp = hp;
+    }
+    /**
+     * @return the hp
+     */
+    public int getHp() {
+        return hp;
     }
 }
