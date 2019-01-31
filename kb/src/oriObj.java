@@ -1,3 +1,4 @@
+
 //custom pack
 package src;
 
@@ -6,13 +7,14 @@ public class oriObj{
     private int y;
     private int ori;
     private int faction;
-    private goalPost goalPost;
+    private int vel;
 
-    public oriObj(int x, int y, int ori, int faction){
+    public oriObj(int x, int y, int ori, int faction, int vel){
         this.x = x;
         this.y = y;
         this.ori = ori;
         this.faction = faction;
+        this.vel = vel;
     }
     
     public boolean equalsOri(oriObj o) {
@@ -77,15 +79,15 @@ public class oriObj{
         this.faction = faction;
     }
     /**
-     * @param goalPost the goalPost to set
+     * @param vel the vel to set
      */
-    public void setGoalPost(goalPost goalPost) {
-        this.goalPost = goalPost;
+    public void setVel(int vel) {
+        this.vel = vel;
     }
     /**
-     * @return the goalPost
+     * @return the vel
      */
-    public goalPost getGoalPost() {
-        return goalPost;
+    public int getVel() {
+        return vel;
     }
 }
