@@ -67,13 +67,15 @@ public class genOriTest {
 		int[][] vecPlane = new int[xLen][yLen];
 		int[][] oriPlane = new int[xLen][yLen];
 		// ------------------------------
-		int override = oriVec.size() + 1;
+		/**
 		System.out.println("xlen " + vecPlane[0].length + " ylen " + oriPlane[1].length );
 		System.out.println("---------------");
+		 */
+		
+		int override = oriVec.size() + 1;
+		
 		printArr(vecPlane);
 		vecPlane = overArr(vecPlane, override);
-		System.out.println("xlen " + oriPlane[0].length + " ylen " + oriPlane[1].length );
-		System.out.println("---------------");
 		printArr(oriPlane);
 		override = 4; //orientations are 0-3 SO 4 IS A SAFE VALUE FOR ORIENTATION
 		oriPlane = overArr(oriPlane, override);
@@ -148,14 +150,12 @@ public class genOriTest {
 	// ------------------------------
 	// ------------------------------
 	public static int[][] overArr(int[][] plane, int overValue) {
-		for (int i = 0; i < plane[1].length - 1 ; i++) {
-			for (int j = 0; j < plane[0].length - 1 ; j++) {
+		for (int i = 0; i < plane[0].length - 1 ; i++) {
+			for (int j = 0; j < plane.length - 1 ; j++) {
 				plane[j][i] = overValue;
 				//System.out.println(j + " " + i + " now equals " + overValue); //dev tool for array fill debug
 			}
 		}
-		System.out.println("xlen " + plane[0].length + " ylen " + plane[1].length );
-		System.out.println("---------------");
 		printArr(plane);
 		return plane;
 	}
