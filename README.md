@@ -1,4 +1,6 @@
-# DN_MM_Hunter  
+#the team has resolved before completion of the project
+
+# DN_MM_Hunter
 
 ## 1.The Team  
 We are University student that are trying our best to fullfill our Tasks.  
