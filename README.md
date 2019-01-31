@@ -1,4 +1,4 @@
-#the team has resolved before completion of the project
+# the team has resolved before completion of the project
 
 # DN_MM_Hunter
 
