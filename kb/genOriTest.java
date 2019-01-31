@@ -26,7 +26,8 @@ public class genOriTest {
 		Scanner sc = new Scanner(System.in);
 		int xLen = sc.nextInt();
 		int yLen = sc.nextInt();
-		int objNumber = sc.nextInt();
+		int objNumber = sc.nextInt(); 
+		System.out.println(xLen + " " +  yLen + " " + objNumber);
 		sc.close();
 		// ------------------------------
 		int xArr[] = new int[objNumber];
@@ -88,8 +89,8 @@ public class genOriTest {
 		int[][] oriPlane2 = oriVerif(oriPlane);
 		//printArr(oriPlane2);
 		// ------------------------------
-		for (int i = 0; i < oriPlane[1].length - 1 ; i++) {
-			for (int j = 0; j < oriPlane[0].length - 1 ; j++) {
+		for (int i = 0; i < oriPlane[0].length ; i++) {
+			for (int j = 0; j < oriPlane.length ; j++) {
 				if(oriPlane[j][i] != oriPlane2[j][i]){
 					oriVec.elementAt(vecPlane[j][i]).setOri(oriPlane2[j][i]);
 				}
@@ -103,8 +104,8 @@ public class genOriTest {
 	// ------------------------------
 	// ------------------------------
 	public static void printArr(int[][] plane) {
-		for (int i = 0; i < plane[0].length - 1; i++) {
-			for (int j = 0; j < plane[1].length - 1; j++) {
+		for (int i = 0; i < plane[0].length; i++) {
+			for (int j = 0; j < plane.length; j++) {
 				System.out.print(plane[j][i]);
 			}
 			System.out.println("");
@@ -117,10 +118,16 @@ public class genOriTest {
 	// ------------------------------
 	public static int[][] oriVerif(int[][] oriPlane) {
         Random rngRandom = new Random();
-        for ( int i = 0; i < oriPlane[1].length - 1; i++) {
-            for ( int j = 0; j < oriPlane[0].length - 1; j++) {
-				if( i < oriPlane[1].length - 1){
-					if ( j < oriPlane[0].length - 2 ) { //we test (x+1) therfore we need to -2 here already
+        for ( int i = 0; i < oriPlane[0].length; i++) {
+            for ( int j = 0; j < oriPlane.length; j++) {
+				if( i < oriPlane[0].length - 1){
+					if ( j < oriPlane.length ) { //we test (x+1) therfore we need to -2 here already
+						if(j == oriPlane.length -1 ){
+							if(oriPlane[j][i] == oriPlane[j][i+1] && !(oriPlane[j][i] == 4) ){
+								 oriPlane[j][i+1] = reroll(oriPlane[j][i], rngRandom);
+							}
+							break;
+						}
 						if(oriPlane[j][i] == oriPlane[j][i+1] && !(oriPlane[j][i] == 4) ) oriPlane[j][i+1] = reroll(oriPlane[j][i], rngRandom);
 						if(oriPlane[j][i] == oriPlane[j+1][i] && !(oriPlane[j][i] == 4) ) oriPlane[j+1][i] = reroll(oriPlane[j][i], rngRandom);
 					}else{
@@ -131,7 +138,9 @@ public class genOriTest {
 					if ( j < oriPlane[0].length - 1) if(oriPlane[j][i] == oriPlane[j+1][i] && !(oriPlane[j][i] == 4) ) oriPlane[j+1][i] = reroll(oriPlane[j][i], rngRandom);
 				}
             }
-        }
+		}
+		System.out.println("-------------");
+		printArr(oriPlane);
         return oriPlane;
     }
 	// ------------------------------
@@ -150,8 +159,8 @@ public class genOriTest {
 	// ------------------------------
 	// ------------------------------
 	public static int[][] overArr(int[][] plane, int overValue) {
-		for (int i = 0; i < plane[0].length - 1 ; i++) {
-			for (int j = 0; j < plane.length - 1 ; j++) {
+		for (int i = 0; i < plane[0].length ; i++) {
+			for (int j = 0; j < plane.length ; j++) {
 				plane[j][i] = overValue;
 				//System.out.println(j + " " + i + " now equals " + overValue); //dev tool for array fill debug
 			}
